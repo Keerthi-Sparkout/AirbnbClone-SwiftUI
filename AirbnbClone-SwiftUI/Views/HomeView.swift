@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Categories: Identifiable {
+struct Category: Identifiable {
     var id = UUID()
     var image: String
     var name: String
@@ -23,7 +23,7 @@ struct Experiences: Identifiable {
 
 struct HomeView: View {
     
-    let categories: [Categories] = [Categories(image: "property1", name: "Home"), Categories(image: "property2", name: "Experience"), Categories(image: "property3", name: "Restaurant"), Categories(image: "property4", name: "For Rent")]
+    let categories: [Category] = [Category(image: "property1", name: "Home"), Category(image: "property2", name: "Experience"), Category(image: "property3", name: "Restaurant"), Category(image: "property4", name: "For Rent")]
     let experiences: [Experiences] = [Experiences(image: "property1", name: "Paris Best Kept Secrets Tour", price: "$170 per person"), Experiences(image: "property2", name: "Silent Disco Beach yoga", price: "$180 per person"), Experiences(image: "property3", name: "Miamo - Amazing view", price: "$100 per person"), Experiences(image: "property4", name: "Comfy Artist's Home", price: "$80 per person")]
     
     init() {
@@ -43,17 +43,7 @@ struct HomeView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(self.categories) { item in
-                                VStack(spacing: 0) {
-                                    Image(item.image)
-                                        .resizable()
-                                        .frame(width: 130, height: 80)
-                                    Text(item.name)
-                                        .font(.custom("Helvetica Neue", size: 15))
-                                        .foregroundColor(Color.black.opacity(0.9))
-                                        .fontWeight(.regular)
-                                        .padding(.all, 12)
-                                }
-                                .background(Color.white.shadow(radius: 2))
+                                CategoriesView(item: item)
                             }
                         }
                         .padding(.bottom, 20)
@@ -131,5 +121,25 @@ struct PropertyView_Previews: PreviewProvider {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct CategoriesView: View {
+    var item: Category
+    var body: some View {
+        VStack(spacing: 0) {
+            Image(item.image)
+                .resizable()
+                .frame(width: 130, height: 90)
+            Text(item.name)
+                .font(.custom("Helvetica Neue", size: 15))
+                .foregroundColor(Color.black.opacity(0.9))
+                .fontWeight(.regular)
+                .padding(.all, 12)
+        }
+        .background(Color.white)
+        .cornerRadius(4.0)
+        .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 0)
+        .padding(.leading, 2)
     }
 }
