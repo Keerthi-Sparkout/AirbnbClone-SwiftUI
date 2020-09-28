@@ -24,6 +24,9 @@
 		7856B67324F279A100BDD3EF /* PropertyDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B67224F279A100BDD3EF /* PropertyDetailsView.swift */; };
 		7856B67624F298F700BDD3EF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7856B67424F28F0400BDD3EF /* LoginView.swift */; };
 		7856B67924F2A0CB00BDD3EF /* AirbnbClone-SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7856B67724F2A0CB00BDD3EF /* AirbnbClone-SwiftUI.xcdatamodeld */; };
+		7857AD89252192B1005815BF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857AD86252192B0005815BF /* PageViewController.swift */; };
+		7857AD8A252192B1005815BF /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857AD87252192B0005815BF /* PageControl.swift */; };
+		7857AD8B252192B1005815BF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857AD88252192B1005815BF /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		7856B67224F279A100BDD3EF /* PropertyDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailsView.swift; sourceTree = "<group>"; };
 		7856B67424F28F0400BDD3EF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7856B67824F2A0CB00BDD3EF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7857AD86252192B0005815BF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		7857AD87252192B0005815BF /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		7857AD88252192B1005815BF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		8B6E1FB14D672D957E715533 /* Pods-AirbnbClone-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbClone-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-AirbnbClone-SwiftUI/Pods-AirbnbClone-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		D074062DD292ACB167870B16 /* Pods-AirbnbClone-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbClone-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-AirbnbClone-SwiftUI/Pods-AirbnbClone-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +116,9 @@
 				784C343024E253DE00623D5E /* SearchView.swift */,
 				784C343124E253DE00623D5E /* TabBarView.swift */,
 				784C342E24E253D300623D5E /* HomeView.swift */,
+				7857AD87252192B0005815BF /* PageControl.swift */,
+				7857AD88252192B1005815BF /* PageView.swift */,
+				7857AD86252192B0005815BF /* PageViewController.swift */,
 				7856B67224F279A100BDD3EF /* PropertyDetailsView.swift */,
 				7856B67424F28F0400BDD3EF /* LoginView.swift */,
 				785686A0250F2128006021B1 /* LoadingView.swift */,
@@ -261,9 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				784C343224E253DF00623D5E /* SearchView.swift in Sources */,
+				7857AD8B252192B1005815BF /* PageView.swift in Sources */,
+				7857AD89252192B1005815BF /* PageViewController.swift in Sources */,
 				7856869F250F1B6E006021B1 /* LoginModel.swift in Sources */,
 				7856869D250F199D006021B1 /* LoginHandler.swift in Sources */,
 				784C328824D93E97006B7D5A /* AppDelegate.swift in Sources */,
+				7857AD8A252192B1005815BF /* PageControl.swift in Sources */,
 				784C342F24E253D400623D5E /* HomeView.swift in Sources */,
 				784C328A24D93E97006B7D5A /* SceneDelegate.swift in Sources */,
 				784C343324E253DF00623D5E /* TabBarView.swift in Sources */,

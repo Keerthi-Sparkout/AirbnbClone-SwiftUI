@@ -31,41 +31,45 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack {
-            SearchView().shadow(color: Color.gray.opacity(0.4), radius: 4)
-                .padding(.all)
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    Text("What can we help you find, Keerthi?")
-                        .font(.custom("Helvetica Neue", size: 21))
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.black.opacity(0.9))
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 20) {
-                            ForEach(self.categories) { item in
-                                CategoriesView(item: item)
+        NavigationView {
+            VStack {
+                SearchView().shadow(color: Color.gray.opacity(0.4), radius: 4)
+                    .padding(.all)
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading) {
+                        Text("What can we help you find, Keerthi?")
+                            .font(.custom("Helvetica Neue", size: 21))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.black.opacity(0.9))
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 20) {
+                                ForEach(self.categories) { item in
+                                    CategoriesView(item: item)
+                                }
+                            }
+                            .padding(.bottom, 20)
+                        }
+                        Text("Introducing Airbnb Plus")
+                            .font(.custom("Helvetica Neue", size: 21))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.black.opacity(0.9))
+                        Text("A new selection of homes verified for quality & control")
+                            .font(.custom("Helvetica Neue", size: 16))
+                            .fontWeight(.regular)
+                            .foregroundColor(Color(UIColor.darkGray))
+                            .padding(.top, 8)
+                        
+                        List(self.experiences) { item in
+                            NavigationLink(destination: PropertyDetailsView(item: item)) {
+                                PropertyView(item: item)
+                                    .padding(.horizontal, -10.0)
                             }
                         }
-                        .padding(.bottom, 20)
-                    }
-                    Text("Introducing Airbnb Plus")
-                        .font(.custom("Helvetica Neue", size: 21))
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.black.opacity(0.9))
-                    Text("A new selection of homes verified for quality & control")
-                        .font(.custom("Helvetica Neue", size: 16))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color(UIColor.darkGray))
-                        .padding(.top, 8)
-                    
-                    List(self.experiences) { item in
-                        PropertyView(item: item)
-                            .padding(.horizontal, -10.0)
-                    }
-                    .frame(height: CGFloat(self.experiences.count) * CGFloat(270))
-                    .disabled(true)
-                }.padding(.horizontal, 20)
-            }.environment(\.defaultMinListRowHeight, 270)
+                        .frame(height: CGFloat(self.experiences.count) * CGFloat(270))
+                    }.padding(.horizontal, 20)
+                }.environment(\.defaultMinListRowHeight, 270)
+            }
+            .navigationBarTitle(Text("Airbnb Clone").bold(), displayMode: .inline)
         }
     }
 }
